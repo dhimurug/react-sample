@@ -3,3 +3,21 @@ $primary: #006699;
 h2 {
 	color: $primary;
 }
+
+#overlay {
+    position: fixed; 
+    width: 100%;
+	height: 100%; 
+    z-index: 2; 
+}
+
+#overlay .bg-light{
+	background-color: #00000059 !important;
+}
+
+#overlay .navbar-light .navbar-brand, #overlay .navbar-light .navbar-nav .nav-link{
+	color: white;
+}
+
+
+
