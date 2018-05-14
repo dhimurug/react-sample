@@ -3,13 +3,16 @@ import Header from './header';
 import 'bootstrap/dist/css/bootstrap.min.css';
 require('../../scss/style.scss');
 
-class App extends Component {
-    render() {
-        return (
-            <Header />
-        );
-    }
-}
 
+const App = ({ children }) => {
+  return (
+    <div>
+      <Header />
+      <div className="content" >
+        {children}
+      </div>
+    </div>
+  );
+};
 
 export default App;

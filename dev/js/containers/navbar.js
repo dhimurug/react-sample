@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   Collapse,
   Navbar,
@@ -28,39 +29,45 @@ export default class EUNavbar extends React.Component {
   }
   render() {
     return (
-      <div>
-        <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">reactstrap</NavbarBrand>
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink href="/components/">Components</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
-              </NavItem>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  Options
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>
-                    Option 1
-                  </DropdownItem>
-                  <DropdownItem>
-                    Option 2
-                  </DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>
-                    Reset
-                  </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
-            </Nav>
-          </Collapse>
-        </Navbar>
-      </div>
+      <Navbar color="light" light expand="md">
+        <NavbarBrand href="/">reactstrap</NavbarBrand>
+        <NavbarToggler onClick={this.toggle} />
+        <Collapse isOpen={this.state.isOpen} navbar>
+          <Nav className="ml-auto" navbar>
+            <NavItem>
+              <Link to="/" className="nav-link" > HOME</Link>
+            </NavItem>
+            <NavItem>
+              <Link to="/latestthinking" className="nav-link" > LATEST THINKING</Link>
+            </NavItem>
+            <NavItem>
+              <Link to="/casestudies" className="nav-link" > CASE STUDIES</Link>
+            </NavItem>
+            <NavItem>
+              <Link to="/solutions" className="nav-link" > SOLUTIONS</Link>
+            </NavItem>
+            <NavItem>
+              <Link to="/accountupdates" className="nav-link" > ACCOUNT UPDATES</Link>
+            </NavItem>
+            <NavItem>
+              <Link to="/testimonials" className="nav-link" > ACCOLADES</Link>
+            </NavItem>
+            <UncontrolledDropdown nav inNavbar>
+              <DropdownToggle nav caret>
+                MORE
+              </DropdownToggle>
+              <DropdownMenu right>
+                <DropdownItem>
+                  <Link to="/events" >EVENTS</Link> 
+                </DropdownItem>
+                <DropdownItem>
+                  <Link to="/newsletters">NEWSLETTER</Link>  
+                </DropdownItem>
+              </DropdownMenu>
+            </UncontrolledDropdown>
+          </Nav>
+        </Collapse>
+      </Navbar> 
     );
   }
 }
