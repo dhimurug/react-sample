@@ -29,11 +29,12 @@ export default class EUNavbar extends React.Component {
   }
   render() {
     return (
+      <div className="eu-nav">
       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">reactstrap</NavbarBrand>
+      <NavbarBrand className="collapse-mode" href="/"><img src="https://cxm.cognizant.com/EU/assets/images/img/eu_logo.png" alt="Logo" width="50" height="35" /></NavbarBrand>
         <NavbarToggler onClick={this.toggle} />
         <Collapse isOpen={this.state.isOpen} navbar>
-          <Nav className="ml-auto" navbar>
+          <Nav navbar>
             <NavItem>
               <Link to="/" className="nav-link" > HOME</Link>
             </NavItem>
@@ -45,6 +46,9 @@ export default class EUNavbar extends React.Component {
             </NavItem>
             <NavItem>
               <Link to="/solutions" className="nav-link" > SOLUTIONS</Link>
+            </NavItem>
+            <NavItem className="full-mode">
+            <Link to="/" className="nav-link" ><img src="https://cxm.cognizant.com/EU/assets/images/img/eu_logo.png" alt="Logo" width="100" height="75" /></Link>
             </NavItem>
             <NavItem>
               <Link to="/accountupdates" className="nav-link" > ACCOUNT UPDATES</Link>
@@ -68,6 +72,7 @@ export default class EUNavbar extends React.Component {
           </Nav>
         </Collapse>
       </Navbar> 
+      </div>
     );
   }
 }

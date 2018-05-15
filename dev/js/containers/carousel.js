@@ -76,7 +76,7 @@ class CarouselSlide extends Component {
           onExited={this.onExited}
           key={item.src}
         >
-          <img src={item.src} alt={item.altText} width='100%'  />
+          <img className="eucarousel-fullscreen" src={item.src} alt={item.altText}  />
           <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
         </CarouselItem>
       );
